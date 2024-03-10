@@ -154,6 +154,14 @@ db.users.aggregate([
       },
     },
   },
+  {
+    $group: {
+      _id: null,
+      tagsAverage: {
+        $avg: "$numberOfTags",
+      },
+    },
+  },
 ]);
 
 //8. How many users have a specific tag associated with them? For example 'enim' -> Equivalent of JS filter
